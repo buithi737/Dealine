@@ -81,7 +81,7 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
-            min_max();
+            SL_Xuat_hien();
         }
     }
 }
