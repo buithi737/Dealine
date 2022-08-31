@@ -79,14 +79,41 @@ namespace ConsoleApp1
             }
             Console.ReadKey();
         }
+
+        static void Update_So_Lan_Xuat_Hien()
+        {   
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            List<int> list= new List<int>();
+            int n;
+            int count = 0;
+            Console.WriteLine("Nhap so phan tu n: ");
+            n = Convert.ToInt32(Console.ReadLine());
+            for(int i = 0; i < n; i++)
+            {
+                Console.Write("Phan tu thu: " + (i+1) +": ") ;
+                int temp = Convert.ToInt32(Console.ReadLine());
+                list.Add(temp);
+            }
+            foreach(int number in list)
+            {
+                if (dict.ContainsKey(number))
+                {
+                    dict[number] = dict[number] + 1;
+                }
+                else
+                {
+                    dict.Add(number, 1);
+                }
+            }
+            foreach(var number in dict.Keys)
+            {
+                Console.WriteLine("So " + number+ " Xuat Hien " + dict[number] );
+            }
+        }
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Nhap so luong phan tu n: ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int [] arr = new int[n];    
-            input_arr(arr, n);
-            SL_Xuat_hien(arr, n);
+            Update_So_Lan_Xuat_Hien();
+            Console.ReadKey();
         }
     }
 }
